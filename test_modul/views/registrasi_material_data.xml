@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Registrasi Material Tree View -->
+    <record id="registrasi_material_tree_view_id" model="ir.ui.view">
+        <field name="name">registrasi_material_tree_view_id</field>
+        <field name="model">registrasi.material</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="nama_material"/>
+                <field name="tipe_material"/>
+                <field name="harga_beli"/>
+                <field name="nama_supplier"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Registrasi Actions -->
+    <record id="registrasi_actions_id" model="ir.actions.act_window">
+        <field name="name">Registrasi</field>
+        <field name="res_model">registrasi.material</field>
+    </record>
+
+    <record id="registrasi_actions_tree_view_id" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="registrasi_material.registrasi_material_tree_view_id"/>
+        <field name="act_window_id" ref="registrasi_material.registrasi_actions_id"/>
+    </record>
+
+    <!-- Registrasi Material Menu Items -->
+    <menuitem
+        id="parent_registrasi_material_id"
+        name="registrasi"
+        sequence="4"/>
+
+    <menuitem
+        id="child_registrasi_material_id"
+        name="registrasi"
+        sequence="1"
+        parent="registrasi_material.parent_registrasi_material_id"
+        action="registrasi_material.registrasi_actions_id"/>
+</odoo>

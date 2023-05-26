@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="parent_registrasi_material_id"
+        name="registrasi"
+        sequence="4"
+        model="registrasi.material"/>
+    <menuitem
+        id="child_registrasi_material_id"
+        name="registrasi"
+        sequence="1"
+        parent="registrasi_material.parent_registrasi_material_id"
+        action="registrasi_material.registrasi_actions_id"/>
+</odoo>

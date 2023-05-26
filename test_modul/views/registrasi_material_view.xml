@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="registrasi_material_tree_view_id" model="ir.ui.view">
+        <field name="name">registrasi_material_tree_view_id</field>
+        <field name="model">registrasi.material</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="nama_material"/>
+                <field name="tipe_material"/>
+                <field name="harga_beli"/>
+                <field name="nama_supplier"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
